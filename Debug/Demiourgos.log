@@ -1,0 +1,359 @@
+﻿Build started 09/12/2017 16:37:10.
+     1>Project "C:\Users\Luiz\Desktop\Demiourgos VS\Demiourgos.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Luiz\Desktop\Demiourgos VS\\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt include\bgiout.cxx include\dibutil.cxx include\drawing.cxx include\file.cxx "include\main - backup.cxx" include\misc.cxx include\mouse.cxx include\palette.cxx include\text.cxx include\winbgi.cxx include\winthread.cxx source\classes.cpp source\funcoes.cpp source\func_arq.cpp source\main.cpp
+         main.cpp
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(88): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(89): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(90): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(91): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(100): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(112): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(432): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(433): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(434): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(437): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(438): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(439): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(443): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(447): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(449): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(454): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(457): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(461): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(465): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(467): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(477): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(478): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(479): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(482): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(483): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(484): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(489): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(493): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(495): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(500): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(503): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(507): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(511): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(513): warning C4244: '+=' : conversion from 'double' to 'long', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(574): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(593): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(600): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(601): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(605): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(608): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(610): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(615): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(630): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(631): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(633): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(643): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(661): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(662): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(665): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\direct.h(140) : see declaration of 'mkdir'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(672): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(673): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(678): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(690): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(739): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(740): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(741): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(742): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(743): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(744): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(745): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(746): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(747): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(748): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(750): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(751): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1235): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1251): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1252): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1253): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1266): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1302): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1308): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1477): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1515): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1544): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1552): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1591): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1599): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1640): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1678): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(1721): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2141): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2164): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2186): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2207): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2316): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2327): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2340): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2344): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2347): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2350): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2353): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2358): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2483): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2494): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2504): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2508): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2511): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2514): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2517): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2522): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2736): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2753): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2839): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2840): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2841): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2845): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2846): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(2847): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3602): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3644): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3659): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3671): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3693): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3814): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3815): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3816): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3819): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3820): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(3821): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4252): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4278): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4291): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4304): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4318): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4724): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4732): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4733): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4783): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4789): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\main.cpp(4795): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+         func_arq.cpp
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(67): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(68): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(69): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(70): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(71): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(72): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(73): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(74): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(75): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(76): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(77): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(78): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(79): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(80): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(81): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(82): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(83): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(84): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(85): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(86): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(87): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(88): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(89): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(90): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(91): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(92): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(93): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(94): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(95): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(96): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(97): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(98): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(99): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(100): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(101): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(102): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(103): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(104): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(105): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(106): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(107): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(108): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(111): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(320): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(326): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(327): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(333): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(334): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(336): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(341): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(349): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(350): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(351): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(352): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(353): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(355): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\luiz\desktop\demiourgos vs\source\func_arq.cpp(363): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+         funcoes.cpp
+         classes.cpp
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(367): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(371): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(374): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(377): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(468): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(472): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(475): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\source\classes.cpp(478): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+         winthread.cxx
+     1>c:\users\luiz\desktop\demiourgos vs\include\winthread.cxx(320): warning C4101: 'i' : unreferenced local variable
+         winbgi.cxx
+     1>c:\users\luiz\desktop\demiourgos vs\include\winbgi.cxx(81): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\luiz\desktop\demiourgos vs\include\winbgi.cxx(134): warning C4101: 'actual_color' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\include\winbgi.cxx(133): warning C4101: 'bgi_color' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\include\winbgi.cxx(494): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         text.cxx
+     1>c:\users\luiz\desktop\demiourgos vs\include\text.cxx(348): warning C4018: '<' : signed/unsigned mismatch
+         palette.cxx
+         mouse.cxx
+         misc.cxx
+         main - backup.cxx
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(190): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(193): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(196): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(334): warning C4805: '==' : unsafe mix of type 'int' and type 'bool' in operation
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(368): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(389): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\luiz\desktop\demiourgos vs\include\main - backup.cxx(398): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         file.cxx
+         drawing.cxx
+     1>c:\users\luiz\desktop\demiourgos vs\include\drawing.cxx(819): warning C4101: 'tries' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\include\drawing.cxx(859): warning C4101: 'answer' : unreferenced local variable
+     1>c:\users\luiz\desktop\demiourgos vs\include\drawing.cxx(1110): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+         dibutil.cxx
+         bgiout.cxx
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Luiz\Desktop\Demiourgos VS\\bin\Demiourgos.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Luiz\Desktop\Demiourgos VS\\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Luiz\Desktop\Demiourgos VS\\bin\Demiourgos.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Luiz\Desktop\Demiourgos VS\\bin\Demiourgos.lib" /MACHINE:X86 Debug\bgiout.obj
+         Debug\dibutil.obj
+         Debug\drawing.obj
+         Debug\file.obj
+         "Debug\main - backup.obj"
+         Debug\misc.obj
+         Debug\mouse.obj
+         Debug\palette.obj
+         Debug\text.obj
+         Debug\winbgi.obj
+         Debug\winthread.obj
+         Debug\classes.obj
+         Debug\funcoes.obj
+         Debug\func_arq.obj
+         Debug\main.obj
+     1>LINK : warning LNK4031: no subsystem specified; CONSOLE assumed
+         Demiourgos.vcxproj -> C:\Users\Luiz\Desktop\Demiourgos VS\\bin\Demiourgos.exe
+     1>Done Building Project "C:\Users\Luiz\Desktop\Demiourgos VS\Demiourgos.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.82
