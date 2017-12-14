@@ -86,6 +86,7 @@
     <ClInclude Include="include\dibapi.h" />
     <ClInclude Include="include\dibutil.h" />
     <ClInclude Include="include\funcoes.h" />
+    <ClInclude Include="include\func_arq.h" />
     <ClInclude Include="include\graphics.h" />
     <ClInclude Include="include\winbgi.h" />
     <ClInclude Include="include\winbgim.h" />

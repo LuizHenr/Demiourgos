@@ -26,13 +26,4 @@ int calcula_distancia(posXY p1, posXY p2);
 
 int diferenca_cor(corRGB c1, corRGB c2, corRGB *difCores);
 
-
-int le_info(char atributo[]);
-
-int cria_relatorio(char *argv[], char *nome[], FILE *arq);
-
-void escreve_relatorio(char s[200], FILE *arq);
-
-void salva_relatorio(FILE *arq);
-
 #endif

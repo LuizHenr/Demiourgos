@@ -54,11 +54,11 @@
     <ClCompile Include="source\classes.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\func_arq.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\funcoes.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\func_arq.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\funcoes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\func_arq.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

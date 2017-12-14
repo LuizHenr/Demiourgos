@@ -8,7 +8,7 @@
     <LibraryPath>$(SolutionDir)\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>$(SolutionDir)\include;$(IncludePath)</IncludePath>
     <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
-    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <OutDir>$(SolutionDir)bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
