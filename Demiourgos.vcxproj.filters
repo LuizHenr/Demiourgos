@@ -51,13 +51,28 @@
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\classes.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\funcoes.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="source\func_arq.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\creature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\lake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\plant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\predator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\prey.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,13 +95,28 @@
     <ClInclude Include="include\winbgitypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\classes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\funcoes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\func_arq.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\creature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\predator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\prey.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

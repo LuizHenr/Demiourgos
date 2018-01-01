@@ -1,24 +1,21 @@
 #include <funcoes.h>
-#include <classes.h>
+#include <grid.h>
+#include <lake.h>
+#include <plant.h>
+#include <prey.h>
+#include <predator.h>
 #include <func_arq.h>
 
 #include <graphics.h>
 #include <cstdlib>
-//#include <iostream>
-//#include <pthread.h>
-//#include <time.h>
-
 
 #include <direct.h>  
 #include <iostream>
 #include <pthread.h>
 
-
 #define M_PI       3.14159265358979323846
 
-#define VERSION "2.0.0"
-
-//   PRESAS 1.9.2     em processo
+#define VERSION "2.0.1"
 
 using namespace std;
 
@@ -125,16 +122,13 @@ int main(int argc, char *argv[])
 {
 	system("title Demiourgos 1.9.2 - Console");
 	pausa = true;
-	//printf("b4");
-	//reads_new_cfg_file();
-	//printf("after  \a");
-	//getchar();
+
 	reads_configurations();
 	borda = cfg.borda;
 
 
 
-	//	printf("Lalal\n");
+
 	char nome_relatorio[50];
 	strcpy(nome_relatorio, "Report_Regular");  // strcpy(*nome_relatorio, "Relatorio_Comum");  
 	char local_relatorio_visual[500];
@@ -206,8 +200,11 @@ int main(int argc, char *argv[])
 	}
 	arq = fopen(local_relatorio,"w");
 
-	// printf("criou a bagaca");
-	escreve_relatorio("%%\t Simulation v1.6.9\t", arq);
+	escreve_relatorio("%%\t Simulation v", arq);
+	sprintf(string,"%s",VERSION);
+	escreve_relatorio(string, arq);
+	escreve_relatorio("\t", arq);
+	
 	escreve_relatorio(__TIME__, arq);
 	escreve_relatorio(" - ", arq);
 	escreve_relatorio(__DATE__, arq);
@@ -286,7 +283,8 @@ int main(int argc, char *argv[])
 	//printf("variacao rep ps e pd %d %d\n",cfg.var_campo_max_visao_rep_presa"),cfg.var_campo_max_visao_rep_predador"));
 
 	//***********************    Inicio da parte gráfica ************************************
-	initwindow(qt_col + 170, qt_lin, "Demiourgos 1.9.2 - Simulation");     //abre a janela com espaco para os campos
+	sprintf(string,"Demiourgos %s - Simulation",VERSION);
+	initwindow(qt_col + 170, qt_lin + 10, string);     //abre a janela com espaco para os campos  // lin+10 error?
 
 
 	cor_aux.r = cfg.cor_r_campo;
@@ -343,13 +341,6 @@ int main(int argc, char *argv[])
 	getch();
 	/**/
 
-
-
-
-
-	//    printf("\a");
-
-
 	cor_aux.r = -1;
 	cor_aux.g = -1;
 	cor_aux.b = -1;
@@ -391,10 +382,6 @@ int main(int argc, char *argv[])
 
 
 
-
-	//printf("\t\tEh pá criar %d psmacho e %d psfema, %d pdm e %d pdfema\n",cfg.qt_presa_m"),cfg.qt_presa_f"),cfg.qt_predador_m"),cfg.qt_predador_m"));
-	//getch();
-
 	/*Criando os lagos*/
 
 	if (mod_lago){
@@ -404,15 +391,10 @@ int main(int argc, char *argv[])
 
 		if (cfg.qt_lago > 0){
 			lg1 = criar_lago(1, cor_aux, pos_aux, -1);
-
-			//printf("\t\tcriou O LG1 :D cor %d %d %d\n",cor_aux.r,cor_aux.g,cor_aux.b);
-
+			
 			lg_aux = lg1;
 
 			if (cfg.qt_lago>0)   i = 1;   else   i = 0;
-
-			//printf("\t\t *= qt plantas P %d  G %d  \\o/\n",cfg.qt_planta_p"),cfg.qt_planta_g"));
-			//getchar();
 
 			for (i = i; i<cfg.qt_lago; i++){
 				lg_aux->setProx_l(criar_lago(i + 1, cor_aux, pos_aux, -1));
@@ -423,8 +405,6 @@ int main(int argc, char *argv[])
 		else{
 			lg1 = NULL;
 		}
-		//printf("Criou os lagin \n");
-
 	}
 
 
@@ -441,14 +421,9 @@ int main(int argc, char *argv[])
 			else
 				pl1 = criar_planta(1, cor_aux, pos_aux, 2, 1);
 
-			//printf("\t\tcriou a pl1 :D   cor %d %d %d\n",cor_aux.r,cor_aux.g,cor_aux.b);
-
 			pl_aux = pl1;
 
 			if (cfg.qt_planta_p>0)   i = 1;   else   i = 0;
-
-			//printf("\t\t *= qt plantas P %d  G %d  \\o/\n",cfg.qt_planta_p"),cfg.qt_planta_g"));
-			//getchar();
 
 			for (i = i; i<cfg.qt_planta_p; i++){
 				pl_aux->setProx_p(criar_planta(i + 1, cor_aux, pos_aux, 1, 1));
@@ -465,19 +440,10 @@ int main(int argc, char *argv[])
 		else{
 			pl1 = NULL;
 		}
-		// printf("Criou os matin \n");
-
-
-		//  printf("Man, as parada foi criada\n");    
-		// getch();
-
-		// printf("cor MATIN %d %d %d\n\n",pl1->getCor().r,pl1->getCor().g,pl1->getCor().b);
 
 	}
 
 
-
-	//printf("Nao me sacaneie Presas, sou seu criador!\n");
 	/*Criando as presas*/
 	if (cfg.qt_presa_m > 0 || cfg.qt_presa_f > 0){
 		if (cfg.qt_presa_m>0)
@@ -485,16 +451,11 @@ int main(int argc, char *argv[])
 		else
 			ps1 = criar_presa(1, true, *ps_pais, *ps_pais);
 
-		//printf("\t\tcriou a ps1 :D\n");
-
 		ps_aux = ps1;
 		ps_ = ps_aux->getMove_td();
 		pthread_create(&ps_, NULL, movimentar_presa, ps_aux);
 
 		if (cfg.qt_presa_m>0)   i = 1;   else   i = 0;
-
-		// printf("\t\tPS1 em movimento! \\o/");
-		// getchar();
 
 		for (i = i; i<cfg.qt_presa_m; i++){
 
@@ -518,9 +479,6 @@ int main(int argc, char *argv[])
 	else{
 		ps1 = NULL;
 	}
-
-	// printf("criou as pss iniciais \n");  
-
 
 	/*Criando os predadores*/
 	if (cfg.qt_predador_m > 0 || cfg.qt_predador_f > 0){
@@ -556,7 +514,7 @@ int main(int argc, char *argv[])
 		pd1 = NULL;
 	}
 
-	// printf("Criou as initial population \n");
+	// printf("initial population created\n");
 
 	/*
 	cor_aux.r = cfg.cor_r_planta");
@@ -594,22 +552,6 @@ int main(int argc, char *argv[])
 
 
 	/*   Imprime as caracteristicas de plantas   */
-
-	/*    // teste GETPLANTA   ok    =)
-	int x = 1;
-
-	while(getPlanta(x) != NULL){
-
-	printf(" -> Planta %d  de size %d na pos %d,%d e a cor? %d %d %d\n",getPlanta(x)->getCodigo(),getPlanta(x)->getTamanho(), getPlanta(x)->getPosicao().x,getPlanta(x)->getPosicao().y,getPlanta(x)->getCor().r,getPlanta(x)->getCor().g,getPlanta(x)->getCor().b);
-
-	x++;
-	}
-	*/
-
-
-
-
-
 
 
 
@@ -660,9 +602,9 @@ int main(int argc, char *argv[])
 	int visao_ps = -1, visao_pd = -1;
 
 	int tmp_rel = 1;
-	int segundo = 0;   /**/
+	int segundo = 0; 
 
-	//cont das imagens     //relatório visual   ;)
+	//cont das imagens para o relatorio visual
 	int cont_img = 0;
 
 
@@ -750,7 +692,6 @@ int main(int argc, char *argv[])
 			pthread_mutex_lock(&p_key);
 
 
-			//printf("hey..\n");
 			//calcula_media();
 			calcula_var();
 
@@ -811,7 +752,7 @@ int main(int argc, char *argv[])
 		}
 
 
-		if (abs(tempo - segundo) > 750 || segundo == 0){      /**/
+		if (abs(tempo - segundo) > 750 || segundo == 0){      
 			segundo = tempo;
 
 			pl_aux = pl1;
@@ -830,7 +771,7 @@ int main(int argc, char *argv[])
 			}
 
 			//modificar o tamanho dos lagos
-			//printf("tamanho lagin = %.6f\n", sin(2*M_PI*(1/100)*tempo));
+			//printf("tamanho lago = %.6f\n", sin(2*M_PI*(1/100)*tempo));
 			float variacao = 0.7;
 			int t = (tempo / 1000) % tempo_oscilacao_lago;  //0-100
 			double y;
@@ -840,13 +781,11 @@ int main(int argc, char *argv[])
 				lg_aux->setTamanho_atual(lg_aux->getTamanho() + (y*variacao * 100));
 
 				//if(lg_aux == lg1)
-				//	printf("nvl lg %d porcentagi dos lagin lg1 %d com o seno de %.2f\n",t, lg_aux->getTamanho_atual(),y*variacao*100); 
+				//	printf("nvl lg %d porcent do lago lg1 %d com o seno de %.2f\n",t, lg_aux->getTamanho_atual(),y*variacao*100); 
 				lg_aux = lg_aux->getProx_l();
-				//printf("imprimindo os lagoo1!"); 
+				
 			}
-			/*
-			*/
-			//
+			
 
 			pthread_mutex_lock(&p_key);
 
@@ -870,7 +809,6 @@ int main(int argc, char *argv[])
 				setcolor(COLOR(lg_aux->getCor().r, lg_aux->getCor().g, lg_aux->getCor().b));
 				fillellipse(lg_aux->getPosicao().x, lg_aux->getPosicao().y, lg_aux->getTamanho()*lg_aux->getTamanho_atual() / 100, lg_aux->getTamanho()*lg_aux->getTamanho_atual() / 100);
 				lg_aux = lg_aux->getProx_l();
-				//printf("imprimindo os lagoo1!");
 			}
 
 			///////////////////////////////////////////////////////////////////////
@@ -896,7 +834,6 @@ int main(int argc, char *argv[])
 						bar(pl_aux->getPosicao().x, pl_aux->getPosicao().y, pl_aux->getPosicao().x + 4, pl_aux->getPosicao().y + 4);
 				}
 				pl_aux = pl_aux->getProx_p();
-				//printf("imprimindo os mato1!");
 			}
 
 
@@ -1002,7 +939,7 @@ int main(int argc, char *argv[])
 
 			pthread_mutex_unlock(&p_key);
 
-			//     Switch case da tecla   /  mouse   em uma função separada           CODIGO  MUITO  BAGUNÇADO !!!
+			//  TODO:   Switch case da tecla   /  mouse   em uma função separada    
 
 			if (pausa){
 				if (tecla == 27){  //ESC
@@ -1154,7 +1091,7 @@ int main(int argc, char *argv[])
 					setcolor(COLOR(255, 193, 37));
 					circle(pos_ps.x, pos_ps.y, visao_ps);
 
-					// printf("impremiu o sentido da plesa %d\t\n",ps_aux->getCodigo());
+					// printf("sentido da plesa %d\tfoi impresso\n",ps_aux->getCodigo());
 
 					imprime_campo_descricao();
 					imprime_info_presa(ps_aux);
@@ -1356,7 +1293,7 @@ int main(int argc, char *argv[])
 					while (ps_aux != NULL){
 
 						if (ps_aux->getVelocidade() < 0 || ps_aux->getVelocidade() > 9 || ps_aux->getSentidos() < max_visao*0.5 || ps_aux->getSentidos() > max_visao){
-							printf("\n Visao ou Campo de visao BUGADOS:\n\n");
+							printf("\n Visao ou Campo de visao ERRADOS:\n\n");
 
 							diferenca_cor(ps_aux->getCor(), cp.getCor(), &cor_aux);
 							cout << "\n§§§     Prey     §§§\n\n";
@@ -1397,7 +1334,7 @@ int main(int argc, char *argv[])
 					while (pd_aux != NULL){
 
 						if (pd_aux->getVelocidade() < 0 || pd_aux->getVelocidade() > 9 || pd_aux->getSentidos() < max_visao*0.5 || pd_aux->getSentidos() > max_visao){
-							printf("\n Visao ou Campo de visao BUGADOS:\n\n");
+							printf("\n Visao ou Campo de visao ERRADOS:\n\n");
 
 							cout << "\n§§§     Predator     §§§\n\n";
 							cout << "Code ID= " << pd_aux->getCodigo();
@@ -1528,6 +1465,7 @@ int main(int argc, char *argv[])
 			bgiout << clique_pos.x << "     \n";
 			bgiout << clique_pos.y << "     ";
 			outstreamxy(qt_col + 70, 296);
+			//getch();
 
 			if (pausa){
 				setlinestyle(0, 0, 2);
@@ -1749,7 +1687,7 @@ Lago* getLago(int cod){  /**/
 		if (lg_aux->getCodigo() == cod)
 			return lg_aux;
 	}
-	// printf(">> Planta %d não encontrada\n\ a",cod);
+	// printf(">> Lago %d não encontrada\n\ a",cod);
 	return NULL;
 }
 
@@ -1810,9 +1748,9 @@ Presa* criar_presa(int c, bool s, Presa mae, Presa pai){
 	// pai_aux.setSentidos(-1);
 
 	//    if(getPresa(mae.getCodigo()) == NULL)
-	//       printf("mai nola");//mae = pai_aux;
+	//       printf("mae null");//mae = pai_aux;
 	//    if(getPresa(pai.getCodigo()) == NULL)
-	//	   printf("pae nolo");//pai = pai_aux;   
+	//	   printf("pai null");//pai = pai_aux;   
 
 	p = (Presa*)malloc(sizeof(class Presa));
 
@@ -1945,7 +1883,7 @@ Presa* criar_presa(int c, bool s, Presa mae, Presa pai){
 
 
 	if (p == NULL)
-		printf("bebe nulo bugadao");
+		printf("bebe nulo");
 
 
 	return p;
@@ -2160,7 +2098,7 @@ Lago* criar_lago(int c, corRGB cor, posXY pos, int tam){
 
 	l->inicializa(c, cor, pos, tam);
 
-	//printf("planta criada com t %d na pos %d %d", p->getTamanho(),p->getPosicao().x,p->getPosicao().y);
+	//printf("lago criada com t %d na pos %d %d", p->getTamanho(),p->getPosicao().x,p->getPosicao().y);
 
 	//cout<<"** "<< ((cfg.tamanho_presa")*0.5 + 1) + rand()%cfg.qt_col_campo")) - cfg.tamanho_presa") - 1 << endl;
 
@@ -2186,6 +2124,9 @@ void matar_presa(int c){
 		else{
 			ps1 = NULL;
 		}
+		// Wait Gestation time to free memory 
+		long int deathTime = tempo;
+		while ((tempo / 1000 - deathTime / 1000) < cfg.tempo_gest_presa + 5);
 
 		free(ps_morta);
 		return;
@@ -2202,7 +2143,6 @@ void matar_presa(int c){
 			else{
 				ps_aux->setProx_c(NULL);
 			}
-
 			free(ps_morta);
 			return;
 		}
@@ -2233,7 +2173,9 @@ void matar_predador(int c){
 		else{
 			pd1 = NULL;
 		}
-
+		// Wait Gestation time to free memory 
+		long int deathTime = tempo;
+		while ((tempo / 1000 - deathTime / 1000) < cfg.tempo_gest_predador + 5);
 		free(pd_morto);
 		return;
 	}
@@ -2409,20 +2351,7 @@ void *movimentar_presa(void *p){
 
 	int nha = 0;/**/
 
-
-
-
-
-
-
 	while (ps->getIdade() < ps->getIdade_max()){
-
-
-
-
-
-
-
 
 		pthread_mutex_lock(&p_key);
 
@@ -2485,7 +2414,7 @@ void *movimentar_presa(void *p){
 							ps->setCod_alvo_fome(pl1->getCodigo());
 						}
 					}
-					//printf("presa indo em direcao a pranta..\n");   
+					//printf("presa indo em direcao a planta..\n");   
 				}
 				else{
 					if (pl1 != NULL){
@@ -2496,7 +2425,7 @@ void *movimentar_presa(void *p){
 		}
 
 
-		//sede coisas
+		//sede 
 		if (mod_sede){
 			if (ps->getSede() <= tmp_sede){
 
@@ -2505,7 +2434,6 @@ void *movimentar_presa(void *p){
 
 					if (getLago(ps->getCod_alvo_sede())->getTamanho() * getLago(ps->getCod_alvo_sede())->getTamanho_atual() / 100 > 0){     //se o rio tiver agua...                    if(getPlanta(ps->getCod_alvo_fome())->getEstado()){  //se a planta estiver viva
 
-						//  printf("tem auga nu lags\n");
 						lg_aux = lg1;
 						while (lg_aux != NULL){
 
@@ -2531,7 +2459,7 @@ void *movimentar_presa(void *p){
 						if (calcula_distancia(ps->getPosicao(), getLago(ps->getCod_alvo_sede())->getPosicao()) < ps->getSentidos() + getLago(ps->getCod_alvo_sede())->getTamanho() * getLago(ps->getCod_alvo_sede())->getTamanho_atual() / 100){
 							//   if(atacar(pd,getPresa(pd->getCod_alvo()),pd->getSentidos(),nvl_pers)){
 							//if(ps != ps1)   
-							///                           printf("a pranta está dentro do campo de visao...");   
+							///                           printf("a planta está dentro do campo de visao...");   
 							nova_posicao = getLago(ps->getCod_alvo_sede())->getPosicao();
 							//      } 
 						}
@@ -2541,7 +2469,7 @@ void *movimentar_presa(void *p){
 						ps->setCod_alvo_sede(-1);
 
 					}
-					//printf("presa indo em direcao a pranta..\n");   
+					//printf("presa indo em direcao a planta..\n");   
 				}
 				else{
 					if (lg1 != NULL){
@@ -2625,65 +2553,6 @@ void *movimentar_presa(void *p){
 
 
 
-		// ps->setCod_alvo(pl1->getCodigo());
-
-		/*
-		//imported dos pred
-		if((ps->getCod_alvo() != -1 && (nova_posicao.x != getPlanta(ps->getCod_alvo())->getPosicao().x  && nova_posicao.y != getPlanta(ps->getCod_alvo())->getPosicao().y)) || (ps->getCod_alvo() == -1)){    // se apresa tem alvo mas nao está marcada como destino..     ou se nao tem alvo..
-
-		if(ps->getGestacao() == 0 && ps->getResguardo() == 0 && ps->getFertil()){   //está fertil
-		if(ps->getCod_parceiro()!= -1){    // tem parceiro
-		if(ps != ps1)                                               printf("ifi\n");
-		ps_aux=ps1;
-		while(ps_aux != NULL){
-
-		if(ps_aux->getSexo() != ps->getSexo()){
-		if(ps_aux->getGestacao() == 0 && ps_aux->getResguardo() == 0 && ps_aux->getFertil()){
-		if(calcula_distancia(ps->getPosicao(),ps_aux->getPosicao()) < calcula_distancia(getPresa(ps->getCod_parceiro())->getPosicao(), ps->getPosicao())){
-		ps->setCod_parceiro(ps_aux->getCodigo());
-		}
-		}
-		}
-		ps_aux= ps_aux->getProx_c();
-		}
-
-		if(calcula_distancia(ps->getPosicao(),getPresa(ps->getCod_parceiro())->getPosicao()) < ps->getSentidos()){
-		if(getPresa(ps->getCod_parceiro())->getResguardo()== 0){
-		if(getPresa(ps->getCod_parceiro())->getGestacao() == 0){
-		if(getPresa(ps->getCod_parceiro())->getFertil()) {
-		nova_posicao=getPresa(ps->getCod_parceiro())->getPosicao();
-		}
-		}
-		}
-		}
-
-		}
-		else{
-		// if(ps != ps1)                          printf("eusia presa %d nao tem parceiro sexualitos\n",ps->getCodigo());
-		ps_aux=ps1;
-		while(ps_aux!=NULL){
-
-
-
-		if(ps->getSexo() != ps_aux->getSexo()){
-		if(ps_aux->getGestacao()==0 && ps_aux->getResguardo()==0 && ps_aux->getFertil()){
-		ps->setCod_parceiro(ps_aux->getCodigo());
-		break;
-		}
-		}
-		ps_aux=ps_aux->getProx_c();
-		}
-		}
-
-		}
-
-		}
-
-		*/
-		//->   pthread_mutex_unlock(&p_key);  
-
-
-
 
 		//->   pthread_mutex_lock(&p_key);   
 
@@ -2748,14 +2617,14 @@ void *movimentar_presa(void *p){
 
 
 
-		//printf("ate aqui ok o alvo eh %d \n",ps->getCod_alvo());
+		//printf("o alvo eh %d \n",ps->getCod_alvo());
 
 
 		posicao_atual = ps->getPosicao();
 
 
 		//if(ps != ps1)           
-		//      printf("my pos %d %d  pozalv %d %d", ps->getPosicao().x,ps->getPosicao().y, nova_posicao.x, nova_posicao.y);
+		//      printf("my pos %d %d  pos_alv %d %d", ps->getPosicao().x,ps->getPosicao().y, nova_posicao.x, nova_posicao.y);
 
 		//        bar(nova_posicao.x,nova_posicao.y,nova_posicao.x+2,nova_posicao.y+2);
 
@@ -2796,7 +2665,7 @@ void *movimentar_presa(void *p){
 					break;
 
 			} while (nova_posicao.x <= 0 + ps->getTamanho() || nova_posicao.x >= dim_campo.x - ps->getTamanho() || nova_posicao.y <= 0 + ps->getTamanho() || nova_posicao.y >= dim_campo.y - ps->getTamanho() || aux == 1);
-			// if(ps != ps1)            printf("new pozalv=> %d %d",nova_posicao.x,nova_posicao.y);
+			// if(ps != ps1)            printf("new pos_alv=> %d %d",nova_posicao.x,nova_posicao.y);
 			if (ps->getArea_interesse()<0)
 				nova_posicao = ps->getPosicao();
 			ps->setArea_interesse(area_int);
@@ -2815,8 +2684,7 @@ void *movimentar_presa(void *p){
 
 				if (calcula_distancia(getPredador(ps->getCod_ameaca())->getPosicao(), ps->getPosicao()) < ps->getSentidos()){    // se o predador ameaca estiver no campo de visao, fugir
 					ps->mover(ps->afastar(nova_posicao), dim_campo);
-					//printf("afastantooo...\n");
-
+					//printf("afastanto\n");
 				}
 				else
 					if (mod_fome_presa){
@@ -2884,21 +2752,17 @@ void *movimentar_presa(void *p){
 
 		pthread_mutex_lock(&p_key);
 
-		//ps->setCod_alvo(1);   //*****saporra aqui
+		//ps->setCod_alvo(1);   //***
 
-		//        if(pl1 == NULL)
-		//            printf("pl1 dus caraio tah nulo porreeesssa?\n\a");
-		//        else
-		//            printf("pl1? %d \n",pl1->getCodigo());
 
 		if (ps->getCod_alvo_fome() != -1){
 			/*       - Probably the bad guy            */
 			if (ps->getFome() <= tmp_fome){ // se a presa estiver com fome
-				//  printf("to ake  ps cod alvo1 =>%d \n", ps->getCod_alvo());
+				//  printf("  ps cod alvo1 =>%d \n", ps->getCod_alvo());
 
 
 				if (getPlanta(ps->getCod_alvo_fome())->getEstado()){   // se a planta estiver viva...
-					// printf("to ake  ps cod alvo2 =>%d \n", ps->getCod_alvo());
+					// printf("  ps cod alvo2 =>%d \n", ps->getCod_alvo());
 
 					if ((ps->getPosicao().x == getPlanta(ps->getCod_alvo_fome())->getPosicao().x) && (ps->getPosicao().y == getPlanta(ps->getCod_alvo_fome())->getPosicao().y)){     // se a presa esta na mesma posica que a planta
 						if (getPlanta(ps->getCod_alvo_fome())->getTamanho() == 1){  // se aplanta tiver tamanho 1
@@ -2931,7 +2795,7 @@ void *movimentar_presa(void *p){
 			if (ps->getSede() <= tmp_sede){ // se a presa estiver com sede              
 
 				if (getLago(ps->getCod_alvo_sede())->getTamanho() * getLago(ps->getCod_alvo_sede())->getTamanho_atual() / 100 > 0){   // se o lago tiver agua
-					//printf("to ake  ps cod alvo sede =>%d \n", ps->getCod_alvo_sede());
+					//printf("  ps cod alvo sede =>%d \n", ps->getCod_alvo_sede());
 					if (calcula_distancia(ps->getPosicao(), getLago(ps->getCod_alvo_sede())->getPosicao()) <= getLago(ps->getCod_alvo_sede())->getTamanho() * getLago(ps->getCod_alvo_sede())->getTamanho_atual() / 100){    //se a distancia entre a presa e o lago que ela esta com sede  for menor que o tamanho do raio do lago...  
 
 						do{
@@ -2974,7 +2838,6 @@ void *movimentar_presa(void *p){
 							if (ps->getFertil() && getPresa(ps->getCod_parceiro())->getFertil()){
 								ps->setGestacao(tgps);
 								parceiro = getPresa(ps->getCod_parceiro());
-								//  printf("ifi cabuloso");
 								ps_aux = ps1;
 								while (ps_aux != NULL){
 									if (ps_aux->getCod_parceiro() == ps->getCodigo()){
@@ -2991,8 +2854,6 @@ void *movimentar_presa(void *p){
 		}
 
 
-		//if(ps != ps1)              printf("Here we are %d\n",ps->getCodigo());  
-
 
 		if (ps->getCod_parceiro() != -1){
 			if (!getPresa(ps->getCod_parceiro())->getFertil()){
@@ -3003,15 +2864,15 @@ void *movimentar_presa(void *p){
 
 
 		if (ps->getCor().r>255 || ps->getCor().g>255 || ps->getCor().b>255 || ps->getCor().r<0 || ps->getCor().g<0 || ps->getCor().b<0){
-			printf("presa %d cor bugada %d %d %d \n", ps->getCodigo(), ps->getCor().r, ps->getCor().g, ps->getCor().b);
+			printf("presa %d cor errada %d %d %d \n", ps->getCodigo(), ps->getCor().r, ps->getCor().g, ps->getCor().b);
 			pausa = true;
 		}
 		if (ps->getVelocidade()<0 || ps->getVelocidade()>9){
-			printf("presa %d velocidade bugada %d\n", ps->getCodigo(), ps->getVelocidade());
+			printf("presa %d velocidade errada %d\n", ps->getCodigo(), ps->getVelocidade());
 			pausa = true;
 		}
 		if (ps->getSentidos()<visao_max*0.5 || ps->getSentidos()>visao_max){
-			printf("presa %d visao bugada %d\n", ps->getCodigo(), ps->getSentidos());
+			printf("presa %d visao errada %d\n", ps->getCodigo(), ps->getSentidos());
 			pausa = true;
 		}
 
@@ -3052,20 +2913,16 @@ void *movimentar_presa(void *p){
 
 		pthread_mutex_unlock(&p_key);
 
-		//if(ps != ps1)         printf("readdy to wait %d..  \n",ps->getCodigo());
+		//if(ps != ps1)         printf("ready to wait %d..  \n",ps->getCodigo());
 
 		if (ps->getVelocidade() >= 0 && ps->getVelocidade()<10)
 			delay(fdm - (ps->getVelocidade()*(10 * fdm / 100)));
 
-		// printf("\tChegou aquiiiiii %d \n",ps->getCodigo());  
+		// printf("\tChegou aqui %d \n",ps->getCodigo());  
 
 		while (pausa){
 			delay(100);
 		}
-
-		//        if(nha==1){
-		//			printf(".%d.",ps->getVelocidade());
-		//      }
 
 		if (abs(tempo - segundo) > 750){
 
@@ -3123,7 +2980,7 @@ void *movimentar_presa(void *p){
 						}
 						/*
 						if(getPresa(ps->getCodigo()) == NULL){
-						printf("Mainha nulo cod %d",parceiro->getCodigo());
+						printf("Mae nulo cod %d",parceiro->getCodigo());
 						getch();
 						}
 						*/
@@ -3155,7 +3012,7 @@ void *movimentar_presa(void *p){
 
 
 						if (ps_aux->getProx_c()->getVelocidade()<0 || ps_aux->getProx_c()->getVelocidade()>9){  //pais de categoria 1..  nao pode!!
-							printf("persa %d velocidade %d mae cod %d vel %d     pai cod %d vel %d\n", ps_aux->getProx_c()->getCodigo(), ps_aux->getProx_c()->getVelocidade(), ps->getCodigo(), ps->getVelocidade(), parceiro->getCodigo(), parceiro->getVelocidade());
+							printf("presa %d velocidade %d mae cod %d vel %d     pai cod %d vel %d\n", ps_aux->getProx_c()->getCodigo(), ps_aux->getProx_c()->getVelocidade(), ps->getCodigo(), ps->getVelocidade(), parceiro->getCodigo(), parceiro->getVelocidade());
 
 
 							pausa = true;
@@ -3282,9 +3139,11 @@ void *movimentar_presa(void *p){
 		pd_aux = pd_aux->getProx_c();
 	}
 
-	matar_presa(ps->getCodigo());
+	ps->kill();
 
 	pthread_mutex_unlock(&p_key);
+
+	matar_presa(ps->getCodigo());
 
 	return 0;
 }
@@ -3424,14 +3283,14 @@ void *movimentar_predador(void *p){
 				//    printf("ps->getCod_alvo() != -1\n",ps->getCod_alvo_sede());                  
 				if (pd->getCod_alvo_sede() != -1){
 
-					//     printf("presa %d tem alvo! %d  hehe\n",ps->getCodigo(),ps->getCod_alvo());                       
+					//     printf("presa %d tem alvo! %d  \n",ps->getCodigo(),ps->getCod_alvo());                       
 
 
 					// printf("getPlanta(ps->getCod_alvo())->getEstado() +++ %d\n",getPlanta(ps->getCod_alvo())->getEstado()?1:0); 
 
 					if (getLago(pd->getCod_alvo_sede())->getTamanho() * getLago(pd->getCod_alvo_sede())->getTamanho_atual() / 100 > 0){     //se o rio tiver agua...                    if(getPlanta(ps->getCod_alvo_fome())->getEstado()){  //se a planta estiver viva
 
-						//  printf("tem auga nu lags\n");
+						//  printf("there is water in lakes\n");
 						lg_aux = lg1;
 						while (lg_aux != NULL){
 
@@ -3447,10 +3306,6 @@ void *movimentar_predador(void *p){
 							lg_aux = lg_aux->getProx_l();
 						}
 
-						// printf("o lago alvu da ps %d eh %d \n",ps->getCodigo(), ps->getCod_alvo_sede());  
-
-						// printf("definiu o cod alvo da presa..\n");  
-
 					}
 
 					// printf("getPlanta(ps->getCod_alvo())->getEstado() +++ %d\n",getPlanta(ps->getCod_alvo())->getEstado()?1:0);
@@ -3461,13 +3316,13 @@ void *movimentar_predador(void *p){
 						if (calcula_distancia(pd->getPosicao(), getLago(pd->getCod_alvo_sede())->getPosicao()) < pd->getSentidos() + getLago(pd->getCod_alvo_sede())->getTamanho() * getLago(pd->getCod_alvo_sede())->getTamanho_atual() / 100){
 							//   if(atacar(pd,getPresa(pd->getCod_alvo()),pd->getSentidos(),nvl_pers)){
 							//if(ps != ps1)   
-							///                           printf("a pranta está dentro do campo de visao...");   
+							///                           printf("a planta está dentro do campo de visao...");   
 							nova_posicao = getLago(pd->getCod_alvo_sede())->getPosicao();
 							//      } 
 						}
 						//     }                   
 					}
-					//printf("presa indo em direcao a pranta..\n");   
+					//printf("presa indo em direcao a planta..\n");   
 				}
 				else{
 					if (lg1 != NULL){
@@ -3483,8 +3338,7 @@ void *movimentar_predador(void *p){
 
 
 		/*
-		printf("lalala od alvo pred %d",pd->getCod_alvo());
-
+		
 		printf("*%d \n", pd->getCod_alvo());
 		printf("**%d \n", nova_posicao.x);
 		posXY ppp = getPresa(pd->getCod_alvo())->getPosicao();
@@ -3620,7 +3474,7 @@ void *movimentar_predador(void *p){
 			if (pd->getSede() <= tmp_sede){ // se a presa estiver com sede              
 
 				if (getLago(pd->getCod_alvo_sede())->getTamanho() * getLago(pd->getCod_alvo_sede())->getTamanho_atual() / 100 > 0){   // se o lago tiver agua
-					//printf("to ake  ps cod alvo sede =>%d \n", ps->getCod_alvo_sede());
+					//printf("  ps cod alvo sede =>%d \n", ps->getCod_alvo_sede());
 					if (calcula_distancia(pd->getPosicao(), getLago(pd->getCod_alvo_sede())->getPosicao()) <= getLago(pd->getCod_alvo_sede())->getTamanho() * getLago(pd->getCod_alvo_sede())->getTamanho_atual() / 100){
 
 						do{
@@ -3681,15 +3535,15 @@ void *movimentar_predador(void *p){
 
 
 		if (pd->getCor().r>255 || pd->getCor().g>255 || pd->getCor().b>255 || pd->getCor().r<0 || pd->getCor().g<0 || pd->getCor().b<0){
-			printf("predador %d cor bugada %d %d %d \n", pd->getCodigo(), pd->getCor().r, pd->getCor().g, pd->getCor().b);
+			printf("predador %d cor errada %d %d %d \n", pd->getCodigo(), pd->getCor().r, pd->getCor().g, pd->getCor().b);
 			pausa = true;
 		}
 		if (pd->getVelocidade()<0 || pd->getVelocidade()>9){
-			printf("predador %d velocidade bugada %d\n", pd->getCodigo(), pd->getVelocidade());
+			printf("predador %d velocidade errada %d\n", pd->getCodigo(), pd->getVelocidade());
 			pausa = true;
 		}
 		if (pd->getSentidos()<visao_max*0.5 || pd->getSentidos()>visao_max){
-			printf("predador %d visao bugada %d\n", pd->getCodigo(), pd->getSentidos());
+			printf("predador %d visao errada %d\n", pd->getCodigo(), pd->getSentidos());
 			pausa = true;
 		}
 
@@ -3793,7 +3647,7 @@ void *movimentar_predador(void *p){
 
 
 						if (pd_aux->getProx_c()->getVelocidade()<0 || pd_aux->getProx_c()->getVelocidade()>9){  //pais de categoria 1..  nao pode!!
-							printf("pedradô %d velocidade %d mae cod %d vel %d     pai cod %d vel %d\n", pd_aux->getProx_c()->getCodigo(), pd_aux->getProx_c()->getVelocidade(), pd->getCodigo(), pd->getVelocidade(), parceiro->getCodigo(), parceiro->getVelocidade());
+							printf("pedrador %d velocidade %d mae cod %d vel %d     pai cod %d vel %d\n", pd_aux->getProx_c()->getCodigo(), pd_aux->getProx_c()->getVelocidade(), pd->getCodigo(), pd->getVelocidade(), parceiro->getCodigo(), parceiro->getVelocidade());
 							getch();
 						}
 
@@ -3900,10 +3754,11 @@ void *movimentar_predador(void *p){
 		pd_aux = pd_aux->getProx_c();
 	}
 
-	matar_predador(pd->getCodigo());
-
+	pd->kill();
+	
 	pthread_mutex_unlock(&p_key);
-
+	
+	matar_predador(pd->getCodigo());
 
 	return 0;
 }
@@ -4658,7 +4513,7 @@ void divide_campo(dimXY dimensao, int qt_areas, int cont_areas, int *cols, int c
 	c_lins = cont_lins;
 
 	if (cont_areas < qt_areas){
-		//printf("ainda preciso dividir :P  \n"); 
+		//printf("ainda preciso dividir   \n"); 
 		if ((cont_cols < cont_lins) || (dimensao.x >= dimensao.y && cont_cols == cont_lins)){
 			//printf("cont_lins > cont_cols...  \n"); 
 			p = cont_cols;
@@ -4671,7 +4526,8 @@ void divide_campo(dimXY dimensao, int qt_areas, int cont_areas, int *cols, int c
 			cont_cols = i - 2;
 			cont_areas = cont_areas * 2;
 		}
-		else{
+		else
+		{
 			//printf("cont_cols > cont_lins...  \n"); 
 			p = cont_lins;
 			for (i = 1; i<(cont_lins + 1) * 2; i += 2){

@@ -33,8 +33,6 @@ int diferenca_cor(corRGB c1, corRGB c2, corRGB *difCores){
 	dif += abs(c1.g - c2.g);  // mais diferenca de G
 	dif += abs(c1.b - c2.b);  // mais diferenca de B
 
-	// printf("");
-
 	difCores->r = abs(c1.r - c2.r);
 	difCores->g = abs(c1.g - c2.g);
 	difCores->b = abs(c1.b - c2.b);

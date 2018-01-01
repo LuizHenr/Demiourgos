@@ -1,5 +1,5 @@
-#ifndef CLASSES_H
-#define CLASSES_H
+#ifndef CRIATURE_H
+#define CRIATURE_H
 
 #include <math.h>
 #include <pthread.h>
@@ -10,62 +10,6 @@
 
 #define MAX_DIMENSAO_X 1920 // 1900px
 #define MAX_DIMENSAO_Y 1080 // 1050px
-
-
-
-//class Criatura;
-//class Planta;
-//class Lago;
-
-
-class Lago{
-private:
-	int codigo;
-	corRGB cor;
-	posXY posicao;  //do superior esquedo
-	int tamanho;  // raio (em px)  
-	int tamanho_atual;  // porcentagem do raio original
-	Lago *prox_l;
-
-public:
-	void setCodigo(int c);
-	int getCodigo();
-
-	void setCor(corRGB c);
-	corRGB getCor();
-
-	void setPosicao(posXY p);
-	posXY getPosicao();
-
-	void setTamanho_atual(int t);
-	int getTamanho_atual();
-	void setTamanho(int t);
-	int getTamanho();
-
-	void setProx_l(Lago *l);
-	Lago* getProx_l();
-
-
-	void inicializa(int cod, corRGB c, posXY p, int t);
-
-};
-
-
-
-class Campo{
-private:
-	corRGB cor;
-	int mes_atual, ano_atual;
-	dimXY dimensao;
-	char mapa_obj[MAX_DIMENSAO_X][MAX_DIMENSAO_Y];  //
-
-public:
-
-	void setCor(corRGB c);
-	corRGB getCor();
-	void inicializa(corRGB c);
-	char getMapa_obj(posXY p);
-};
 
 
 
@@ -118,6 +62,8 @@ public:
 	posXY aproximar(posXY posicao2);
 
 	posXY afastar(posXY posicao2);
+	void kill();
+	int isAlive();
 	int getCodigo();
 	posXY getPosicao();
 	corRGB getCor();
@@ -171,84 +117,6 @@ public:
 	void setCamuflado(bool c);
 
 };
-
-
-class Presa : public Criatura{
-private:
-	int cod_ameaca;
-	Presa *prox_c;
-
-public:
-	void nascer(int c, bool s, Presa mae, Presa pai);
-	Presa* getProx_c();
-	int getCod_ameaca();
-
-	void setProx_c(Presa *p);
-	void setCod_ameaca(int c);
-
-
-};
-
-
-class Predador : public Criatura{
-private:
-	Predador *prox_c;
-
-public:
-	void nascer(int c, bool s, Predador mae, Predador pai);
-
-	Predador* getProx_c();
-
-	void setProx_c(Predador *p);
-
-};
-
-
-
-class Planta{
-private:
-	int codigo;
-	corRGB cor;
-	posXY posicao;  //do superior esquedo
-	int tamanho;  // 1-pequeno   2-grande
-	bool estado; // 0-morto  1-vivo
-	int morte;  //tempo que a planta está morta
-	Planta *prox_p;
-
-public:
-	void setCodigo(int c);
-	int getCodigo();
-	void setCor(corRGB c);
-	corRGB getCor();
-	void setPosicao(posXY p);
-	posXY getPosicao();
-
-	void setTamanho(int t);
-	int getTamanho();
-
-	void setEstado(bool e);
-	bool getEstado();
-
-	void setMorte(int m);
-	int getMorte();
-
-	void setProx_p(Planta *p);
-	Planta* getProx_p();
-
-	void inicializa(int cod, corRGB c, posXY p, int t, bool e);
-	void morte_mm();
-
-};
-
-
-
-
-//extern class Lago;
-//extern class Criatura;
-//extern class Presa;
-//extern class Predador;
-//extern class Planta;
-
 
 
 

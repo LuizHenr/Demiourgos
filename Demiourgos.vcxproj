@@ -76,18 +76,28 @@
     <ClCompile Include="include\text.cxx" />
     <ClCompile Include="include\winbgi.cxx" />
     <ClCompile Include="include\winthread.cxx" />
-    <ClCompile Include="source\classes.cpp" />
+    <ClCompile Include="source\creature.cpp" />
     <ClCompile Include="source\funcoes.cpp" />
     <ClCompile Include="source\func_arq.cpp" />
+    <ClCompile Include="source\grid.cpp" />
+    <ClCompile Include="source\lake.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\plant.cpp" />
+    <ClCompile Include="source\predator.cpp" />
+    <ClCompile Include="source\prey.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\classes.h" />
+    <ClInclude Include="include\creature.h" />
     <ClInclude Include="include\dibapi.h" />
     <ClInclude Include="include\dibutil.h" />
     <ClInclude Include="include\funcoes.h" />
     <ClInclude Include="include\func_arq.h" />
     <ClInclude Include="include\graphics.h" />
+    <ClInclude Include="include\grid.h" />
+    <ClInclude Include="include\lake.h" />
+    <ClInclude Include="include\plant.h" />
+    <ClInclude Include="include\predator.h" />
+    <ClInclude Include="include\prey.h" />
     <ClInclude Include="include\winbgi.h" />
     <ClInclude Include="include\winbgim.h" />
     <ClInclude Include="include\winbgitypes.h" />
