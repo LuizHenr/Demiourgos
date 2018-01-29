@@ -114,8 +114,6 @@ void divide_campo(dimXY, int, int, int *, int, int *, int); //this function divi
 
 
 
-
-
 //Programa principal
 
 int main(int argc, char *argv[])
@@ -125,8 +123,6 @@ int main(int argc, char *argv[])
 
 	reads_configurations();
 	borda = cfg.borda;
-
-
 
 
 	char nome_relatorio[50];
@@ -284,7 +280,7 @@ int main(int argc, char *argv[])
 
 	//***********************    Inicio da parte gráfica ************************************
 	sprintf(string,"Demiourgos %s - Simulation",VERSION);
-	initwindow(qt_col + 170, qt_lin + 10, string);     //abre a janela com espaco para os campos  // lin+10 error?
+	initwindow(qt_col + 170 + 10, qt_lin + 10, string);     //abre a janela com espaco para os campos  // +10 error?
 
 
 	cor_aux.r = cfg.cor_r_campo;
@@ -847,16 +843,17 @@ int main(int argc, char *argv[])
 
 		setcolor(WHITE);
 		settextstyle(11, 0, 1);
-		bgiout << tempo / 1000 << " ";
-		outstreamxy(getmaxx() - 60, 343);
-		bgiout << cps_m << "  ";
-		outstreamxy(getmaxx() - 107, 399);
-		bgiout << cps_f << "  ";
-		outstreamxy(getmaxx() - 57, 399);
-		bgiout << cpd_m << "  ";
-		outstreamxy(getmaxx() - 107, 431);
-		bgiout << cpd_f << "  ";
-		outstreamxy(getmaxx() - 57, 431);
+		sprintf(string, "%d  ", tempo / 1000);
+		outtextxy(getmaxx() - 60, 343, string);
+		
+		sprintf(string, "%d  ", cps_m);
+		outtextxy(getmaxx() - 107, 399, string);
+		sprintf(string, "%d  ", cps_f);
+		outtextxy(getmaxx() - 57, 399, string);
+		sprintf(string, "%d  ", cpd_m);
+		outtextxy(getmaxx() - 107, 431, string);
+		sprintf(string, "%d  ", cpd_f);
+		outtextxy(getmaxx() - 57, 431, string);
 
 		pthread_mutex_unlock(&p_key);
 
@@ -1460,11 +1457,11 @@ int main(int argc, char *argv[])
 
 			pthread_mutex_lock(&p_key);
 
-			setcolor(COLOR(255, 193, 37));
-			settextstyle(8, 0, 1);
-			bgiout << clique_pos.x << "     \n";
-			bgiout << clique_pos.y << "     ";
-			outstreamxy(qt_col + 70, 296);
+			//  print mouse position
+			//setcolor(COLOR(255, 193, 37));
+			//settextstyle(8, 0, 1);
+			//sprintf(string, "%d     \n%d     ", clique_pos.x, clique_pos.y);
+			//outtextxy(qt_col + 70, 296, string);
 			//getch();
 
 			if (pausa){
@@ -1568,8 +1565,7 @@ int main(int argc, char *argv[])
 			pthread_mutex_unlock(&p_key);
 
 			//clicked on config button
-
-			if (clique_pos.x >= qt_col + 151 && clique_pos.x <= qt_col + 167 && clique_pos.y >= 2 && clique_pos.y <= 19){
+			if (clique_pos.x >= qt_col + 155 && clique_pos.x <= qt_col + 167 && clique_pos.y >= 3 && clique_pos.y <= 15){
 				pausa = true;
 				chama_configuration(*argv);
 				//read conf again
@@ -3565,8 +3561,6 @@ void *movimentar_predador(void *p){
 
 
 
-
-
 		if (pd->getCor().r>255 || pd->getCor().g>255 || pd->getCor().b>255 || pd->getCor().r<0 || pd->getCor().g<0 || pd->getCor().b<0){
 
 			setfillstyle(1, COLOR(255, 255, 255));
@@ -3597,9 +3591,6 @@ void *movimentar_predador(void *p){
 
 
 		while (pausa){
-			//  if(pd->getCodigo()==pd_sel && pausa)
-			//     printf("inicio do while PAUSA\n");
-
 			delay(100);
 		}
 
@@ -3743,7 +3734,6 @@ void *movimentar_predador(void *p){
 
 
 
-
 	pthread_mutex_lock(&p_key);
 
 	pd_aux = pd1;
@@ -3782,11 +3772,33 @@ void imprime_campo_descricao(){
 	rectangle(col, 0, getmaxx(), getmaxy());
 
 	settextstyle(8, 0, 2);  //settextstyle(6, 0, 1);
-	bgiout << "DESCRIPTION";   //bgiout<<"DESCRIÇÂO";
-	outstreamxy(col + 15, lin + 20);  //outstreamxy(col+13,lin+20);
+	outtextxy(col + 15, lin + 20,"DESCRIPTION");
+	//bgiout<<"DESCRIÇÂO";
+	//outstreamxy(col+13,lin+20);
 
 	settextstyle(0, 0, 0);
 	setcolor(COLOR(125, 250, 0));
+
+	outtextxy(col + 10, lin + 50, "Type:");
+	outtextxy(col + 10, lin + 68, "Code(ID):");
+	outtextxy(col + 10, lin + 86, "Gender:");
+	outtextxy(col + 10, lin + 104, "Category:");
+	outtextxy(col + 10, lin + 122, "Speed:");
+	outtextxy(col + 10, lin + 140, "Age:");
+	outtextxy(col + 10, lin + 158, "Color:");
+	outtextxy(col + 10, lin + 176, "Sit.:");
+	outtextxy(col + 10, lin + 194, "Target:");
+	outtextxy(col + 10, lin + 212, "Threat:");
+	outtextxy(col + 10, lin + 230, "Partner:");
+	outtextxy(col + 10, lin + 248, "Hunger:");
+	outtextxy(col + 10, lin + 266, "Thirst:");
+	outtextxy(col + 10, lin + 284, "Camouflaged:");
+	outtextxy(col + 90, lin + 140, "/");
+	outtextxy(col + 97, lin + 158, ",");
+	outtextxy(col + 130, lin + 158, ",");
+
+
+	/* 
 	bgiout << "Type:\n";  //bgiout<<"Tipo:\n";
 	bgiout << "Code(ID):\n";  //bgiout<<"Código:\n";
 	bgiout << "Gender:\n";   //bgiout<<"Sexo:\n";
@@ -3801,42 +3813,20 @@ void imprime_campo_descricao(){
 	bgiout << "Hunger:\n";
 	bgiout << "Thirst:\n";
 	bgiout << "Camouflaged:\n";
-	outstreamxy(col + 10, lin + 50);
-	bgiout << "/";
-	outstreamxy(col + 90, lin + 140);   //outstreamxy(col+110,lin+140);
-	bgiout << ",";
-	outstreamxy(col + 97, lin + 158);   //outstreamxy(col+110,lin+140);
-	bgiout << ",";
-	outstreamxy(col + 130, lin + 158);   //outstreamxy(col+110,lin+140);
-
+	*/
 
 	settextstyle(11, 0, 1);
 	setcolor(COLOR(175, 185, 185));
-	//bgiout<<"Mouse position:";   //bgiout<<"Posição do Mouse:";
-	//outstreamxy(col+25,lin+278);
-	bgiout << "Time (sec):";   //bgiout<<"Tempo (s):";
-	outstreamxy(col + 35, lin + 343);
 
-	bgiout << "Preys:\n    M:             F:\nPredators:\n    M:             F:";   //  bgiout<<"Presas:\n    M:             F:\nPredadores:\n    M:             F:";
-	outstreamxy(col + 32, lin + 383);
+	outtextxy(col + 35, lin + 343,"Time (sec):");   //bgiout<<"Tempo (s):";
 
-	//settextstyle(13, 0, 0);
-	//setcolor(COLOR(100,185,250));
-	//bgiout<<"X:\nY:";
-	//outstreamxy(col+50,lin+298);
+	outtextxy(col + 32, lin + 383, "Preys:");
+	outtextxy(col + 32, lin + 399, "     M:              F:");
+	outtextxy(col + 32, lin + 415, "Predators:");
+	outtextxy(col + 32, lin + 431, "     M:              F:");
 
-
-	//draw confg button
-	settextstyle(2, 0, 7);
-	setcolor(COLOR(0, 0, 0));
-	setbkcolor(COLOR(255, 255, 255));
-	char c = 15;
-	bgiout << c;
-	outstreamxy(col + 153, lin + 2);
-	setcolor(COLOR(255, 255, 255));
-	setbkcolor(COLOR(0, 0, 0));
-	rectangle(col + 151, lin + 2, col + 167, lin + 19);
-
+	//draw config button
+	readimagefile("config.bmp", col + 155, lin + 3, col + 167, lin + 15);
 
 }
 
@@ -3845,169 +3835,179 @@ void imprime_campo_descricao(){
 void imprime_info_presa(Presa *ps){
 	int col = cfg.qt_col_campo;
 	int lin = 0;
+	char string[100];
 
 	setcolor(COLOR(255, 193, 37));
 	setlinestyle(0, 0, 1);
 	settextstyle(0, 0, 0);
-	bgiout << "Prey";//bgiout<<"Presa";
-	outstreamxy(col + 60, lin + 50);
-	bgiout << ps->getCodigo();
-	outstreamxy(col + 100, lin + 68);  //outstreamxy(col+80,lin+68);
+
+	outtextxy(col + 60, lin + 50, "Prey");
+	sprintf(string, "%d", ps->getCodigo());
+	outtextxy(col + 100, lin + 68, string);
 	if (ps->getSexo())
-		bgiout << "Female"; //  bgiout<<"Feminino";
+		outtextxy(col + 82, lin + 86, "Female"); 
 	else
-		bgiout << "Male";  //bgiout<<"Masculino";
-	outstreamxy(col + 82, lin + 86);  //outstreamxy(col+60,lin+86);  
-	bgiout << ps->getCategoria();
-	outstreamxy(col + 100, lin + 104);  //outstreamxy(col+110,lin+104);
-	bgiout << ps->getVelocidade();
-	outstreamxy(col + 70, lin + 122);   //outstreamxy(col+120,lin+122);
+		outtextxy(col + 82, lin + 86, "Male");
+	sprintf(string, "%d", ps->getCategoria());
+	outtextxy(col + 100, lin + 104, string);
+	sprintf(string, "%d", ps->getVelocidade());
+	outtextxy(col + 70, lin + 122, string);
+	sprintf(string, "");
 	if (ps->getIdade()<10)
-		bgiout << " ";
+		sprintf(string, " ");
 	if (ps->getIdade()<100)
-		bgiout << " ";
-	bgiout << ps->getIdade();
-	outstreamxy(col + 55, lin + 140); //outstreamxy(col+75,lin+140);
-	bgiout << ps->getIdade_max();
-	outstreamxy(col + 105, lin + 140);  //outstreamxy(col+125,lin+140);
+		sprintf(string, "%s ", string);
+	sprintf(string, "%s%d", string,ps->getIdade());
+	outtextxy(col + 55, lin + 140, string);
+	sprintf(string, "%d", ps->getIdade_max());
+	outtextxy(col + 105, lin + 140, string);
+	sprintf(string, "");
 	if (ps->getCor().r<100)
-		bgiout << " ";
-	bgiout << ps->getCor().r;
-	outstreamxy(col + 69, lin + 158);
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, ps->getCor().r);
+	outtextxy(col + 69, lin + 158, string);
+	sprintf(string, "");
 	if (ps->getCor().g<100)
-		bgiout << " ";
-	bgiout << ps->getCor().g;
-	outstreamxy(col + 103, lin + 158);
-	bgiout << ps->getCor().b;
-	outstreamxy(col + 137, lin + 158);
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, ps->getCor().g);
+	outtextxy(col + 103, lin + 158, string);
+	sprintf(string, "");
+	if (ps->getCor().b<100)
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, ps->getCor().b);
+	outtextxy(col + 137, lin + 158, string);
 	if (ps->getGestacao()>0)
-		bgiout << "Pregnant";   //Gestante
+		sprintf(string,"Pregnant");  
 	else if (ps->getResguardo()>0)
-		bgiout << "Resg.";
+		sprintf(string, "Resg."); 
 	else if (ps->getFertil())
-		bgiout << "Fertile";   //bgiout<<"Fértil";  
+		sprintf(string, "Fertile");  
 	else
-		bgiout << "---------";   // bgiout<<"------";  
-	outstreamxy(col + 65, lin + 176);  //outstreamxy(col+100,lin+176);
+		sprintf(string, "---------"); 
+	outtextxy(col + 65, lin + 176, string);
 	if (ps->getCod_alvo_fome() == -1)
-		bgiout << "-------";  //bgiout<<"-----";
+		sprintf(string,"-------"); 	
 	else
-		bgiout << "[" << ps->getCod_alvo_fome() << "]";
-
-	outstreamxy(col + 80, lin + 194);   //outstreamxy(col+60,lin+194);
+		sprintf(string,"[%d]",ps->getCod_alvo_fome());
+	outtextxy(col + 80, lin + 194,string);
 	if (ps->getCod_ameaca() == -1)
-		bgiout << "-------";
+		sprintf(string, "-------");
 	else
-		bgiout << "[" << ps->getCod_ameaca() << "]";
-	outstreamxy(col + 80, lin + 212);
+		sprintf(string, "[%d]", ps->getCod_ameaca());
+	outtextxy(col + 80, lin + 212, string);
 	if (ps->getCod_parceiro() == -1)
-		bgiout << "------";
+		sprintf(string, "-------");
 	else
-		bgiout << "[" << ps->getCod_parceiro() << "]";
-	outstreamxy(col + 90, lin + 230);  //outstreamxy(col+100,lin+230);
+		sprintf(string, "[%d]", ps->getCod_parceiro());
+	outtextxy(col + 90, lin + 230, string);
 	if (ps->getFome() != -1){
-		bgiout << ps->getFome();
+		sprintf(string,"%d",ps->getFome());
 	}
 	else{
-		bgiout << "------";
+		sprintf(string, "------");
 	}
-	outstreamxy(col + 83, lin + 248);  //outstreamxy(col+100,lin+230);
+	outtextxy(col + 83, lin + 248, string);
 	if (ps->getSede() != -1){
-		bgiout << ps->getSede();
+		sprintf(string, "%d", ps->getSede());
 	}
 	else{
-		bgiout << "------";
+		sprintf(string, "------");
 	}
-	outstreamxy(col + 83, lin + 266);  //outstreamxy(col+100,lin+230);
+	outtextxy(col + 83, lin + 266,string);
+
 	if (ps->getCamuflado())
-		bgiout << "Yes";
+		sprintf(string,"Yes");
 	else
-		bgiout << "No";
-	outstreamxy(col + 133, lin + 284);  //outstreamxy(col+100,lin+230);
-
-
+		sprintf(string, "No");
+	outtextxy(col + 133, lin + 284, string);
 }
 
 
 void imprime_info_predador(Predador *pd){
 	int col = cfg.qt_col_campo;
 	int lin = 0;
+	char string[100];
 
 	setcolor(COLOR(255, 193, 37));
 	setlinestyle(0, 0, 1);
 	settextstyle(0, 0, 0);
-	bgiout << "Predator";    //bgiout<<"Predador";  
-	outstreamxy(col + 60, lin + 50);
-	bgiout << pd->getCodigo();
-	outstreamxy(col + 100, lin + 68);  //outstreamxy(col+80,lin+68);
-	if (pd->getSexo())
-		bgiout << "Female";  //bgiout<<"Feminino"; 
-	else
-		bgiout << "Male";   //bgiout<<"Masculino"; 
-	outstreamxy(col + 82, lin + 86);  //outstreamxy(col+60,lin+86);  
-	bgiout << pd->getCategoria();
-	outstreamxy(col + 100, lin + 104);  //outstreamxy(col+110,lin+104);
-	bgiout << pd->getVelocidade();
-	outstreamxy(col + 70, lin + 122);   //outstreamxy(col+120,lin+122);
-	if (pd->getIdade()<10)
-		bgiout << " ";
-	if (pd->getIdade()<100)
-		bgiout << " ";
-	bgiout << pd->getIdade();
-	outstreamxy(col + 55, lin + 140);  //outstreamxy(col+75,lin+140);
-	bgiout << pd->getIdade_max();
-	outstreamxy(col + 105, lin + 140);  //outstreamxy(col+125,lin+140);
-	if (pd->getCor().r<100)
-		bgiout << " ";
-	bgiout << pd->getCor().r;
-	outstreamxy(col + 69, lin + 158);
-	if (pd->getCor().g<100)
-		bgiout << " ";
-	bgiout << pd->getCor().g;
-	outstreamxy(col + 103, lin + 158);
-	bgiout << pd->getCor().b;
-	outstreamxy(col + 137, lin + 158);
-	if (pd->getGestacao()>0)
-		bgiout << "Pregnant";   //Gestante
-	else if (pd->getResguardo()>0)
-		bgiout << "Resg.";
-	else if (pd->getFertil())
-		bgiout << "Fertile";   //bgiout<<"Fértil";  
-	else
-		bgiout << "---------";   // bgiout<<"------";  
-	outstreamxy(col + 65, lin + 176);  //outstreamxy(col+100,lin+176);
-	if (pd->getCod_alvo_fome() == -1)
-		bgiout << "-------";  //bgiout<<"-----";
-	else
-		bgiout << "[" << pd->getCod_alvo_fome() << "]";
 
-	outstreamxy(col + 80, lin + 194);   //outstreamxy(col+60,lin+194);
-	bgiout << "-------";  // ameaca
-	outstreamxy(col + 80, lin + 212);
+	outtextxy(col + 60, lin + 50, "Predator");
+	sprintf(string, "%d", pd->getCodigo());
+	outtextxy(col + 100, lin + 68, string);
+	if (pd->getSexo())
+		outtextxy(col + 82, lin + 86, "Female");
+	else
+		outtextxy(col + 82, lin + 86, "Male");
+	sprintf(string, "%d", pd->getCategoria());
+	outtextxy(col + 100, lin + 104, string);
+	sprintf(string, "%d", pd->getVelocidade());
+	outtextxy(col + 70, lin + 122, string);
+	sprintf(string, "");
+	if (pd->getIdade()<10)
+		sprintf(string, " ");
+	if (pd->getIdade()<100)
+		sprintf(string, "%s ", string);
+	sprintf(string, "%s%d", string, pd->getIdade());
+	outtextxy(col + 55, lin + 140, string);
+	sprintf(string, "%d", pd->getIdade_max());
+	outtextxy(col + 105, lin + 140, string);
+	sprintf(string, "");
+	if (pd->getCor().r<100)
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pd->getCor().r);
+	outtextxy(col + 69, lin + 158, string);
+	sprintf(string, "");
+	if (pd->getCor().g<100)
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pd->getCor().g);
+	outtextxy(col + 103, lin + 158, string);
+	sprintf(string, "");
+	if (pd->getCor().b<100)
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pd->getCor().b);
+	outtextxy(col + 137, lin + 158, string);
+	if (pd->getGestacao()>0)
+		sprintf(string, "Pregnant");
+	else if (pd->getResguardo()>0)
+		sprintf(string, "Resg.");
+	else if (pd->getFertil())
+		sprintf(string, "Fertile");
+	else
+		sprintf(string, "---------");
+	outtextxy(col + 65, lin + 176, string);
+	if (pd->getCod_alvo_fome() == -1)
+		sprintf(string, "-------");
+	else
+		sprintf(string, "[%d]", pd->getCod_alvo_fome());
+	outtextxy(col + 80, lin + 194, string);
+	outtextxy(col + 80, lin + 212, "-------");
 	if (pd->getCod_parceiro() == -1)
-		bgiout << "------";
+		sprintf(string, "-------");
 	else
-		bgiout << "[" << pd->getCod_parceiro() << "]";
-	outstreamxy(col + 90, lin + 230);  //outstreamxy(col+100,lin+230);
+		sprintf(string, "[%d]", pd->getCod_parceiro());
+	outtextxy(col + 90, lin + 230, string);
 	if (pd->getFome() != -1){
-		bgiout << pd->getFome();
+		sprintf(string, "%d", pd->getFome());
 	}
 	else{
-		bgiout << "------";
+		sprintf(string, "------");
 	}
-	outstreamxy(col + 83, lin + 248);  //outstreamxy(col+100,lin+230);
+	outtextxy(col + 83, lin + 248, string);
 	if (pd->getSede() != -1){
-		bgiout << pd->getSede();
+		sprintf(string, "%d", pd->getSede());
 	}
 	else{
-		bgiout << "------";
+		sprintf(string, "------");
 	}
-	outstreamxy(col + 83, lin + 266);  //outstreamxy(col+100,lin+230);
+	outtextxy(col + 83, lin + 266, string);
+
 	if (pd->getCamuflado())
-		bgiout << "Yes";
+		sprintf(string, "Yes");
 	else
-		bgiout << "No";
-	outstreamxy(col + 133, lin + 284);  //outstreamxy(col+100,lin+230);
+		sprintf(string, "No");
+	outtextxy(col + 133, lin + 284, string);
+
 }
 
 
@@ -4017,49 +4017,46 @@ void imprime_info_planta(Planta *pl){
 
 	int col = cfg.qt_col_campo;
 	int lin = 0;
+	char string[100];
 
 	setcolor(COLOR(255, 193, 37));
 	setlinestyle(0, 0, 1);
 	settextstyle(0, 0, 0);
-	bgiout << "Grass";    //bgiout<<"Predador";  
-	outstreamxy(col + 60, lin + 50);
-	bgiout << pl->getCodigo();
-	outstreamxy(col + 100, lin + 68);  //outstreamxy(col+80,lin+68);
-	bgiout << "-------";   //bgiout<<"Masculino"; 
-	outstreamxy(col + 82, lin + 86);  //outstreamxy(col+60,lin+86);  
-	bgiout << "-----";
-	outstreamxy(col + 100, lin + 104);  //outstreamxy(col+110,lin+104);
-	bgiout << "--------";
-	outstreamxy(col + 70, lin + 122);   //outstreamxy(col+120,lin+122);  
-	bgiout << "---------";
-	outstreamxy(col + 55, lin + 140);  //outstreamxy(col+75,lin+140);
+
+	outtextxy(col + 60, lin + 50, "Grass");
+	sprintf(string, "%d", pl->getCodigo());
+	outtextxy(col + 100, lin + 68, string);
+	outtextxy(col + 82, lin + 86, "-------");
+	outtextxy(col + 100, lin + 104, "-----");
+	outtextxy(col + 70, lin + 122, "--------");
+	outtextxy(col + 55, lin + 140, "---------");
+	sprintf(string, "");
 	if (pl->getCor().r<100)
-		bgiout << " ";
-	bgiout << pl->getCor().r;
-	outstreamxy(col + 69, lin + 158);
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pl->getCor().r);
+	outtextxy(col + 69, lin + 158, string);
+	sprintf(string, "");
 	if (pl->getCor().g<100)
-		bgiout << " ";
-	bgiout << pl->getCor().g;
-	outstreamxy(col + 103, lin + 158);
-	bgiout << pl->getCor().b;
-	outstreamxy(col + 137, lin + 158);
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pl->getCor().g);
+	outtextxy(col + 103, lin + 158, string);
+	sprintf(string, "");
+	if (pl->getCor().b<100)
+		sprintf(string, " ");
+	sprintf(string, "%s%d", string, pl->getCor().b);
+	outtextxy(col + 137, lin + 158, string);
 	if (pl->getEstado())
-		bgiout << "Eatable";   //Gestante
+		sprintf(string, "Eatable");
 	else
-		bgiout << "Eaten  ";
-	outstreamxy(col + 65, lin + 176);  //outstreamxy(col+100,lin+176);
-	bgiout << "-------";  //bgiout<<"-----";
-	outstreamxy(col + 80, lin + 194);   //outstreamxy(col+60,lin+194);
-	bgiout << "-------";  // ameaca
-	outstreamxy(col + 80, lin + 212);
-	bgiout << "------";
-	outstreamxy(col + 90, lin + 230);  //outstreamxy(col+100,lin+230);
-	bgiout << "-------";
-	outstreamxy(col + 83, lin + 248);  //outstreamxy(col+100,lin+230);
-	bgiout << "-------";
-	outstreamxy(col + 83, lin + 266);  //outstreamxy(col+100,lin+230);
-	bgiout << "---";
-	outstreamxy(col + 133, lin + 284);  //outstreamxy(col+100,lin+230);
+		sprintf(string, "Eaten  ");
+	outtextxy(col + 65, lin + 176, string);
+	outtextxy(col + 80, lin + 194, "-------");
+	outtextxy(col + 80, lin + 212, "-------");
+	outtextxy(col + 90, lin + 230, "------");
+	outtextxy(col + 83, lin + 248, "------");
+	outtextxy(col + 83, lin + 266, "------");
+	outtextxy(col + 133, lin + 284, "---");
+
 }
 
 
@@ -4070,30 +4067,18 @@ void limpa_descricao(){
 
 	settextstyle(0, 0, 0);
 	setcolor(BLACK);
-	bgiout << "        ";
-	outstreamxy(col + 60, lin + 50);
-	bgiout << "       ";
-	outstreamxy(col + 80, lin + 68);
-	bgiout << "         ";
-	outstreamxy(col + 60, lin + 86);
-	bgiout << "  ";
-	outstreamxy(col + 110, lin + 104);
-	bgiout << "  ";
-	outstreamxy(col + 120, lin + 122);
-	bgiout << "   ";
-	outstreamxy(col + 75, lin + 140);
-	bgiout << "   ";
-	outstreamxy(col + 125, lin + 140);
-	bgiout << "           ";
-	outstreamxy(col + 50, lin + 158);
-	bgiout << "      ";
-	outstreamxy(col + 100, lin + 176);
-	bgiout << "       ";
-	outstreamxy(col + 60, lin + 194);
-	bgiout << "       ";
-	outstreamxy(col + 80, lin + 212);
-	bgiout << "      ";
-	outstreamxy(col + 100, lin + 230);
+	outtextxy(col + 60, lin + 50, "        ");
+	outtextxy(col + 80, lin + 68, "       ");
+	outtextxy(col + 60, lin + 86, "         ");
+	outtextxy(col + 110, lin + 104, "  ");
+	outtextxy(col + 120, lin + 122, "  ");
+	outtextxy(col + 75, lin + 140, "   ");
+	outtextxy(col + 125, lin + 140, "   ");
+	outtextxy(col + 50, lin + 158, "           ");
+	outtextxy(col + 100, lin + 176, "      ");
+	outtextxy(col + 60, lin + 194, "       ");
+	outtextxy(col + 80, lin + 212, "       ");
+	outtextxy(col + 100, lin + 230, "      ");
 
 }
 
